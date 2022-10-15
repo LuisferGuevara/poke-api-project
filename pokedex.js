@@ -22,43 +22,57 @@ function getOnePokemon(url) {
     .then((response) => response)
     .catch((error) => console.log("Error obteniendo pokemon individual", error));
 }
+const search$$ = document.querySelector(".buscador");
 
+const buscar = (pokemons) => {
 
-const buscar = (pokemons) =>{
-
-    const pokemonsFiltered = [];
-    for(const poke of pokemons){
-        if(poke.name.includes(input$$.value)){
-            pokemonsFiltered.push(poke)
-        }
+  console.log(search$$.value);
+  const pokemonsFiltered = [];
+  for (const pokemon of pokemons) {
+    if (pokemon.name.includes(search$$.value)) {
+      pokemonsFiltered.push(pokemon);
     }
-    renderPokemons(pokemonsFiltered)
-}
+  }
+  renderPokemons(pokemonsFiltred);
 
-function printFinder(param){
-    const divFinder$$ = document.createElement('div');
-    const p$$ = document.createElement('p');
-    const input$$ = document.createElement('input')
+};
 
-    divFinder$$.classList.add('divFinder');
-    input$$.setAttribute('type', 'text');
-    p$$.textContent = 'Wanna find specifically ?';
-    divFinder$$.appendChild(p$$);
-    divFinder$$.appendChild(input$$);
+// function printFinder(param){
+//     const divFinder$$ = document.createElement('div');
+//     const p$$ = document.createElement('p');
+//     const input$$ = document.createElement('input')
 
-    const h1$$ = document.querySelector('h1');
+//     divFinder$$.classList.add('divFinder');
+//     input$$.setAttribute('type', 'text');
+//     p$$.textContent = 'Wanna find specifically ?';
+//     divFinder$$.appendChild(p$$);
+//     divFinder$$.appendChild(input$$);
 
-    h1$$.appendChild(divFinder$$);
+//     const h1$$ = document.querySelector('h1');
 
-    input$$.addEventListener('input', buscar())
-}
+//     h1$$.appendChild(divFinder$$);
 
+//     input$$.addEventListener('input', buscar())
+// }
+// const buscar = (pokemons) =>{
+
+//     const pokemonsFiltered = [];
+
+//     for(const poke of ALL_POKEMONS_INFO){
+//         console.log(poke);
+//         if(poke.name.includes(input$$.value)){
+//             pokemonsFiltered.push(poke)
+//         }
+//     }
+//     renderPokemons(pokemonsFiltered)
+// }
 
 let audioDiv = document.createElement("div");
 
 function renderPokemons(pokemons) {
     pokedex$$.innerHTML = '';
-  pokemons.forEach(function (poke) {
+
+  for (const poke of pokemons) {
     const li$$ = document.createElement("li");
     li$$.classList.add("card");
     // const pokeHtml =
@@ -67,7 +81,6 @@ function renderPokemons(pokemons) {
     img$$.classList.add("card-image");
     img$$.src = poke.sprites.front_default;
     img$$.alt = poke.name;
-    // img$$.style ='background-color:black; height: 220px'
 
     const p$$ = document.createElement("p");
     p$$.classList.add("card-title");
@@ -76,38 +89,37 @@ function renderPokemons(pokemons) {
     const div$$ = document.createElement("div");
     div$$.classList.add("card-subtitle");
 
-
-    if( poke.types[0].type.name === "grass"){
-        li$$.classList.add('grass')
-    }else if(poke.types[0].type.name === "fire"){
-        li$$.classList.add('fire')
-    }else if(poke.types[0].type.name === "water"){
-        li$$.classList.add('water')
-    }else if(poke.types[0].type.name === "bug"){
-        li$$.classList.add('bug')
-    }else if(poke.types[0].type.name === "normal"){
-        li$$.classList.add('normal')
-    }else if(poke.types[0].type.name === "poison"){
-        li$$.classList.add('poison')
-    }else if(poke.types[0].type.name === "electric"){
-        li$$.classList.add("electric")
-    }else if(poke.types[0].type.name === "ground"){
-        li$$.classList.add('ground')
-    }else if(poke.types[0].type.name === "fairy"){
-        li$$.classList.add('fairy')
-    }else if(poke.types[0].type.name === "fighting"){
-        li$$.classList.add('fighting')
-    }else if(poke.types[0].type.name === "psychic"){
-        li$$.classList.add('psychic')
-    }else if(poke.types[0].type.name === "rock"){
-        li$$.classList.add('rock')
-    }else if(poke.types[0].type.name === "ghost"){
-        li$$.classList.add('ghost')
-    }else if(poke.types[0].type.name === "ice"){
-        li$$.classList.add('ice')
-    }else if(poke.types[0].type.name === "dragon"){
-        li$$.classList.add('dragon')
-    };
+    if (poke.types[0].type.name === "grass") {
+      li$$.classList.add("grass");
+    } else if (poke.types[0].type.name === "fire") {
+      li$$.classList.add("fire");
+    } else if (poke.types[0].type.name === "water") {
+      li$$.classList.add("water");
+    } else if (poke.types[0].type.name === "bug") {
+      li$$.classList.add("bug");
+    } else if (poke.types[0].type.name === "normal") {
+      li$$.classList.add("normal");
+    } else if (poke.types[0].type.name === "poison") {
+      li$$.classList.add("poison");
+    } else if (poke.types[0].type.name === "electric") {
+      li$$.classList.add("electric");
+    } else if (poke.types[0].type.name === "ground") {
+      li$$.classList.add("ground");
+    } else if (poke.types[0].type.name === "fairy") {
+      li$$.classList.add("fairy");
+    } else if (poke.types[0].type.name === "fighting") {
+      li$$.classList.add("fighting");
+    } else if (poke.types[0].type.name === "psychic") {
+      li$$.classList.add("psychic");
+    } else if (poke.types[0].type.name === "rock") {
+      li$$.classList.add("rock");
+    } else if (poke.types[0].type.name === "ghost") {
+      li$$.classList.add("ghost");
+    } else if (poke.types[0].type.name === "ice") {
+      li$$.classList.add("ice");
+    } else if (poke.types[0].type.name === "dragon") {
+      li$$.classList.add("dragon");
+    }
 
     li$$.appendChild(img$$);
     li$$.appendChild(p$$);
@@ -121,9 +133,11 @@ function renderPokemons(pokemons) {
       document.body.appendChild(audioDiv);
     });
     pokedex$$.appendChild(li$$);
-  });
+  }
+//   pokemons.forEach(function (poke) {
+   
+//   });
 }
-
 
 //Director de orquesta, irá llamando a otras funciones
 
@@ -145,8 +159,9 @@ async function init() {
   console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
 
   renderPokemons(ALL_POKEMONS_INFO);
-  printFinder()
-  buscar()
+  //   printFinder()
+
+  search$$.addEventListener("input", () => buscar(allPokemons));
 }
 window.onload = init;
 
