@@ -25,7 +25,6 @@ function getOnePokemon(url) {
 
 
 const buscar = (pokemons) =>{
-
     const pokemonsFiltered = [];
     for(const poke of pokemons){
         if(poke.name.includes(input$$.value)){
@@ -34,7 +33,6 @@ const buscar = (pokemons) =>{
     }
     renderPokemons(pokemonsFiltered)
 }
-
 function printFinder(param){
     const divFinder$$ = document.createElement('div');
     const p$$ = document.createElement('p');
@@ -49,8 +47,6 @@ function printFinder(param){
     const h1$$ = document.querySelector('h1');
 
     h1$$.appendChild(divFinder$$);
-
-    input$$.addEventListener('input', buscar())
 }
 
 
@@ -146,7 +142,6 @@ async function init() {
 
   renderPokemons(ALL_POKEMONS_INFO);
   printFinder()
-  buscar()
 }
 window.onload = init;
 
