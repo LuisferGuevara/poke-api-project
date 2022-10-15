@@ -1,11 +1,11 @@
 body {
-    background-color: orangered;
+    background-color: #d53c47;
     margin: 0;
     font-family: rubik;
     color: white;
   }
   .container {
-    padding: 40px;
+    padding: 0px;
     margin: 0 auto;
   }
   h1 {
@@ -15,11 +15,17 @@ body {
   }
   .card {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 40px;
     background-color: #f4f4f4;
     color: #222;
-    text-align: center;
+    border-radius: 20px;
+    width: 200px;
   }
+
   .card-title {
     text-transform: uppercase;
     font-size: 32px;
@@ -32,26 +38,75 @@ body {
     margin-top: 5px;
   }
   .card-image {
-    height: 180px;
+    height: 220px;
+  }
+  .grass{
+background-color: #68a990;
+  }
+
+  .fire{
+    background-color: #f8a061;
+  }
+  .water{
+    background-color: #71b8c7;
+  }
+  .bug{
+    background-color: #efc42d;
+  }
+  .normal{
+    background-color: #75525c;
+  }
+  .poison{
+    background-color: #7b62ac;
+  }
+  .electric{
+    background-color: #f6be1f;
+  }
+  .ground{
+    background-color: #8c6218;
+  }
+  .fairy{
+    background-color: #ffc5b4;
+  }
+  .fighting{
+    background-color: #b47a63;
+  }
+  .psychic{
+    background-color: #ff6e80;
+  }
+  .rock{
+    background-color: #8b3e22;
+  }
+  .ghost{
+    background-color: #5b4a9c;
+  }
+  .ice{
+    background-color: #cbe4ff;
+  }
+  .dragon{
+    background-color: #62cad9;
   }
   #pokedex {
     padding-inline-start: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 20px;
+    grid-gap: 40px;
+    justify-items: center;
+    background-color: #2b292c;
+    padding: 40px;
   }
   .card:hover {
-    animation: bounce 0.5s linear;
+    animation: bounce 0.8s linear;
   }
   @keyframes bounce {
     20% {
-      transform: translateY(-6px);
+      transform: translateY(-10px);
     }
     40% {
       transform: translateY(0px);
     }
     60% {
-      transform: translateY(-2px);
+      transform: translateY(-4px);
     }
     80% {
       transform: translateY(-0px);
