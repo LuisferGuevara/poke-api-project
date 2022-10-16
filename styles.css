@@ -79,11 +79,8 @@ input[type="text"] {
   justify-content: center;
   align-items: center;
   width: 250px;
-
   margin-left: 40px;
-
   font-size: 16px;
-
 }
 .card {
   list-style: none;
@@ -115,50 +112,50 @@ input[type="text"] {
   width: 100%;
 }
 .grass {
-  background-color: #68a990;
+  background-color: #34c149;
 }
 
 .fire {
-  background-color: #f8a061;
+  background-color: #ff983e;
 }
 .water {
-  background-color: #71b8c7;
+  background-color: #3293dd;
 }
 .bug {
-  background-color: #efc42d;
+  background-color: #82c500;
 }
 .normal {
-  background-color: #75525c;
+  background-color: #929ba4;
 }
 .poison {
-  background-color: #7b62ac;
+  background-color: #b767cf;
 }
 .electric {
-  background-color: #f6be1f;
+  background-color: #f7cd00;
 }
 .ground {
-  background-color: #8c6218;
+  background-color: #e97233;
 }
 .fairy {
-  background-color: #ffc5b4;
+  background-color: #fb8aec;
 }
 .fighting {
-  background-color: #b47a63;
+  background-color: #e12c6a;
 }
 .psychic {
-  background-color: #ff6e80;
+  background-color: #ff6677;
 }
 .rock {
-  background-color: #8b3e22;
+  background-color: #c9b787;
 }
 .ghost {
-  background-color: #5b4a9c;
+  background-color: #4a6ab3;
 }
 .ice {
-  background-color: #cbe4ff;
+  background-color: #49d2c0;
 }
 .dragon {
-  background-color: #62cad9;
+  background-color: #0070cb;
 }
 #pokedex {
   padding-inline-start: 0;
