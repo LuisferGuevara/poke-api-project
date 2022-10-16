@@ -23,38 +23,35 @@ function getOnePokemon(url) {
     .catch((error) => console.log("Error obteniendo pokemon individual", error));
 }
 
-const input$$ = document.createElement('input')
-input$$.classList.add('search_input')
+const input$$ = document.createElement("input");
+input$$.classList.add("search_input");
+const container$$ = document.querySelector(".container");
 
-function  renderSearch(pokemons){
-    const divFinder$$ = document.createElement('div');
-    const p$$ = document.createElement('p');
-    
-    divFinder$$.classList.add('divFinder');
-    input$$.setAttribute('type', 'text');
-    p$$.textContent = 'Need to find specifically ?';
-    divFinder$$.appendChild(p$$);
-    divFinder$$.appendChild(input$$);
+function renderSearch(pokemons) {
+  const divFinder$$ = document.createElement("div");
+  const p$$ = document.createElement("p");
 
-    const h1$$ = document.querySelector('h1');
+  divFinder$$.classList.add("divFinder");
+  input$$.setAttribute("type", "text");
+  p$$.textContent = "Need to find specifically ?";
+  divFinder$$.appendChild(p$$);
+  divFinder$$.appendChild(input$$);
 
-    h1$$.appendChild(divFinder$$);
-
+  container$$.insertBefore(divFinder$$, pokedex$$);
 }
-const toFind = (event) =>{
-    const inputValue = event.target.value.toLowerCase();
-    const pokemonsFiltered = ALL_POKEMONS_INFO.filter((pokemon) => {
-        const match = pokemon.name.toLowerCase().includes(inputValue)
-        return match
-    }) 
-   renderPokemons(pokemonsFiltered)
-}
+const toFind = (event) => {
+  const inputValue = event.target.value.toLowerCase();
+  const pokemonsFiltered = ALL_POKEMONS_INFO.filter((pokemon) => {
+    const match = pokemon.name.toLowerCase().includes(inputValue);
+    return match;
+  });
+  renderPokemons(pokemonsFiltered);
+};
 
 let audioDiv = document.createElement("div");
 
 function renderPokemons(pokemons) {
-  
-    pokedex$$.innerHTML = "";
+  pokedex$$.innerHTML = "";
 
   for (const poke of pokemons) {
     const li$$ = document.createElement("li");
@@ -72,12 +69,12 @@ function renderPokemons(pokemons) {
     const div$$ = document.createElement("div");
     div$$.classList.add("card-subtitle");
 
-    li$$.classList.add(poke.types[0].type.name)
+    li$$.classList.add(poke.types[0].type.name);
 
     li$$.appendChild(img$$);
     li$$.appendChild(p$$);
     li$$.appendChild(div$$);
-    
+
     pokedex$$.appendChild(li$$);
 
     const cries = "https://play.pokemonshowdown.com/audio/cries/src/" + poke.name + ".wav";
@@ -87,9 +84,40 @@ function renderPokemons(pokemons) {
       </audio>`;
       document.body.appendChild(audioDiv);
     });
-
-    
   }
+}
+
+function renderIcons() {
+  const pokeIcons = [
+    "bug",
+    "dragon",
+    "electric",
+    "fairy",
+    "fighting",
+    "fire",
+    "ghost",
+    "grass",
+    "ground",
+    "ice",
+    "normal",
+    "poison",
+    "psychic",
+    "rock",
+    "water",
+  ];
+
+  const listForIcons$$ = document.createElement("ul");
+  listForIcons$$.classList.add('icon-list');
+  pokeIcons.forEach((element) => {
+    const listItem = document.createElement("li");
+    listItem.className = "icon-imagen";
+    const image$$ = document.createElement('img');
+    image$$.src=`./assets/images/${element}.png`;
+    listItem.appendChild(image$$)
+    listForIcons$$.appendChild(listItem);
+  });
+
+  container$$.insertBefore(listForIcons$$,pokedex$$)
 }
 
 //Director de orquesta, irá llamando a otras funciones
@@ -112,9 +140,9 @@ async function init() {
   console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
 
   renderPokemons(ALL_POKEMONS_INFO);
-  renderSearch(ALL_POKEMONS_INFO)
+  renderSearch(ALL_POKEMONS_INFO);
 
   input$$.addEventListener("input", () => toFind(event));
+  renderIcons();
 }
 window.onload = init;
-

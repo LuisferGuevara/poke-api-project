@@ -1,38 +1,71 @@
+@import url("http://fonts.cdnfonts.com/css/common-pixel");
+@import url("http://fonts.cdnfonts.com/css/pc-senior");
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
 body {
   background-color: #d53c47;
   margin: 0;
   font-family: rubik;
   color: white;
 }
-.container {
-  padding: 0px;
-  margin: 0 auto;
-}
+
 h1 {
   text-transform: uppercase;
   text-align: center;
   font-size: 54px;
+  font-family: "PC Senior", sans-serif;
+  -webkit-text-stroke: 0.3px #3663ac;
+}
+.icon-list{
+  list-style: none;
+  padding: 0;
+  display:flex;
+}
+.icon-imagen{
+  height: 20px;
+padding-right: 20px;
+  width: 20px;
+}
+
+.icon-imagen img{
+  width: 20px;
 }
 .divFinder {
   display: flex;
   flex-direction: column;
-justify-content: center;
-align-items: center;
-  width: 150px;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  margin-left: 40px;
+  font-size: 1em;
+  text-align: center;
+  font-family: "PC Senior", sans-serif;
+}
+.search_input {
+  background-color: transparent;
+  border: 1.5px solid #2b292c;
+  width: 220px;
+  height: 22px;
+}
+.search_input:focus {
+  outline: none;
+  color: #fff;
+}
+input[type="text"] {
+  font-size: 18px;
+}
+
+.icons_div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
 
   margin-left: 40px;
 
   font-size: 16px;
 
-}
-.search_input {
-  background-color: transparent;
-  border: 1.5px solid #2b292c;
-  width: 140px;
-}
-.search_input:focus{
-outline: none;
-color: #fff;
 }
 .card {
   list-style: none;
@@ -45,6 +78,7 @@ color: #fff;
   color: #222;
   border-radius: 20px;
   width: 200px;
+  
 }
 
 .card-title {
