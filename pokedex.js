@@ -9,6 +9,7 @@
 
 const pokedex$$ = document.querySelector("#pokedex");
 const ALL_POKEMONS_INFO = []; // Cuando una variable se declara en el scope global para ser usada por otros, se escribe en mayúsculas
+let FILTERED_POKEMONS = [];
 
 function getAllPokemons() {
   return fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
@@ -26,8 +27,11 @@ function getOnePokemon(url) {
 const input$$ = document.createElement("input");
 input$$.classList.add("search_input");
 const container$$ = document.querySelector(".container");
+const box$$ = document.createElement("div");
+box$$.classList.add("box");
+container$$.insertBefore(box$$, pokedex$$);
 
-function renderSearch(pokemons) {
+const renderSearch = (pokemons) => {
   const divFinder$$ = document.createElement("div");
   const p$$ = document.createElement("p");
 
@@ -37,20 +41,21 @@ function renderSearch(pokemons) {
   divFinder$$.appendChild(p$$);
   divFinder$$.appendChild(input$$);
 
-  container$$.insertBefore(divFinder$$, pokedex$$);
-}
+  box$$.appendChild(divFinder$$);
+};
+
 const toFind = (event) => {
   const inputValue = event.target.value.toLowerCase();
-  const pokemonsFiltered = ALL_POKEMONS_INFO.filter((pokemon) => {
+  FILTERED_POKEMONS = ALL_POKEMONS_INFO.filter((pokemon) => {
     const match = pokemon.name.toLowerCase().includes(inputValue);
     return match;
   });
-  renderPokemons(pokemonsFiltered);
+  renderPokemons(FILTERED_POKEMONS);
 };
 
 let audioDiv = document.createElement("div");
 
-function renderPokemons(pokemons) {
+const renderPokemons = (pokemons) => {
   pokedex$$.innerHTML = "";
 
   for (const poke of pokemons) {
@@ -87,7 +92,7 @@ function renderPokemons(pokemons) {
   }
 }
 
-function renderIcons() {
+const renderIcons = () => {
   const pokeIcons = [
     "bug",
     "dragon",
@@ -107,17 +112,25 @@ function renderIcons() {
   ];
 
   const listForIcons$$ = document.createElement("ul");
-  listForIcons$$.classList.add('icon-list');
+  listForIcons$$.classList.add("icon-list");
   pokeIcons.forEach((element) => {
     const listItem = document.createElement("li");
     listItem.className = "icon-imagen";
-    const image$$ = document.createElement('img');
-    image$$.src=`./assets/images/${element}.png`;
-    listItem.appendChild(image$$)
+    const image$$ = document.createElement("img");
+    image$$.src = `./assets/images/${element}.png`;
+    image$$.addEventListener("click", () => {
+      FILTERED_POKEMONS = FILTERED_POKEMONS.filter((pokemon) => {
+        return pokemon.types[0].type.name === element;
+      });
+      renderPokemons(FILTERED_POKEMONS);
+      FILTERED_POKEMONS = ALL_POKEMONS_INFO;
+    });
+
+    listItem.appendChild(image$$);
     listForIcons$$.appendChild(listItem);
   });
 
-  container$$.insertBefore(listForIcons$$,pokedex$$)
+  box$$.appendChild(listForIcons$$);
 }
 
 //Director de orquesta, irá llamando a otras funciones
@@ -134,6 +147,7 @@ async function init() {
     // Pido a la api la información de cada pokemon indivudual y la guardo en una variable
     const pokeInfo = await getOnePokemon(pokemon.url);
     ALL_POKEMONS_INFO.push(pokeInfo);
+    FILTERED_POKEMONS.push(pokeInfo);
   }
   // console.log('Todos la info de cada pokemon:', ALL_POKEMONS_INFO);
 
