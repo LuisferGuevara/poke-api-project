@@ -22,26 +22,17 @@ function getOnePokemon(url) {
     .then((response) => response)
     .catch((error) => console.log("Error obteniendo pokemon individual", error));
 }
-const search$$ = document.querySelector(".buscador");
 
-// const buscar = (pokemons) => {
-//   console.log(search$$.value);
-//   const pokemonsFiltered = [];
-//   for (const pokemon of pokemons) {
-//     if (pokemon.name.includes(search$$.value)) {
-//       pokemonsFiltered.push(pokemon);
-//     }
-//   }
-//   renderPokemons(pokemonsFiltred);
-// };
 const input$$ = document.createElement('input')
+input$$.classList.add('search_input')
+
 function  renderSearch(pokemons){
     const divFinder$$ = document.createElement('div');
     const p$$ = document.createElement('p');
-
+    
     divFinder$$.classList.add('divFinder');
     input$$.setAttribute('type', 'text');
-    p$$.textContent = 'Wanna find specifically ?';
+    p$$.textContent = 'Need to find specifically ?';
     divFinder$$.appendChild(p$$);
     divFinder$$.appendChild(input$$);
 
@@ -50,21 +41,20 @@ function  renderSearch(pokemons){
     h1$$.appendChild(divFinder$$);
 
 }
-const buscar = (event) =>{
-    console.log(event);
+const toFind = (event) =>{
     const inputValue = event.target.value.toLowerCase();
     const pokemonsFiltered = ALL_POKEMONS_INFO.filter((pokemon) => {
         const match = pokemon.name.toLowerCase().includes(inputValue)
         return match
     }) 
-
    renderPokemons(pokemonsFiltered)
 }
 
 let audioDiv = document.createElement("div");
 
 function renderPokemons(pokemons) {
-  pokedex$$.innerHTML = "";
+  
+    pokedex$$.innerHTML = "";
 
   for (const poke of pokemons) {
     const li$$ = document.createElement("li");
@@ -124,7 +114,7 @@ async function init() {
   renderPokemons(ALL_POKEMONS_INFO);
   renderSearch(ALL_POKEMONS_INFO)
 
-  input$$.addEventListener("input", () => buscar(event));
+  input$$.addEventListener("input", () => toFind(event));
 }
 window.onload = init;
 

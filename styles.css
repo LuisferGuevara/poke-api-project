@@ -1,122 +1,136 @@
 body {
-    background-color: #d53c47;
-    margin: 0;
-    font-family: rubik;
-    color: white;
-  }
-  .container {
-    padding: 0px;
-    margin: 0 auto;
-  }
-  h1 {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 54px;
-  }
-.divFinder{
-display: grid;
-width: 100px;
-padding-bottom: 10px;
-padding-left: 10px;
+  background-color: #d53c47;
+  margin: 0;
+  font-family: rubik;
+  color: white;
+}
+.container {
+  padding: 0px;
+  margin: 0 auto;
+}
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 54px;
+}
+.divFinder {
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+  width: 150px;
+
+  margin-left: 40px;
+
   font-size: 16px;
 
 }
-  .card {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    background-color: #f4f4f4;
-    color: #222;
-    border-radius: 20px;
-    width: 200px;
-  }
+.search_input {
+  background-color: transparent;
+  border: 1.5px solid #2b292c;
+  width: 140px;
+}
+.search_input:focus{
+outline: none;
+color: #fff;
+}
+.card {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #f4f4f4;
+  color: #222;
+  border-radius: 20px;
+  width: 200px;
+}
 
-  .card-title {
-    text-transform: uppercase;
-    font-size: 32px;
-    font-weight: normal;
-    margin-bottom: 0;
-  }
-  .card-subtitle {
-    font-weight: lighter;
-    color: #666;
-    margin-top: 5px;
-  }
-  .card-image {
-    height: 220px;
-  }
-  .grass{
-background-color: #68a990;
-  }
+.card-title {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.card-subtitle {
+  font-weight: lighter;
+  color: #666;
+  margin-top: 5px;
+}
+.card-image {
+  height: 220px;
+  width: 100%;
+}
+.grass {
+  background-color: #68a990;
+}
 
-  .fire{
-    background-color: #f8a061;
+.fire {
+  background-color: #f8a061;
+}
+.water {
+  background-color: #71b8c7;
+}
+.bug {
+  background-color: #efc42d;
+}
+.normal {
+  background-color: #75525c;
+}
+.poison {
+  background-color: #7b62ac;
+}
+.electric {
+  background-color: #f6be1f;
+}
+.ground {
+  background-color: #8c6218;
+}
+.fairy {
+  background-color: #ffc5b4;
+}
+.fighting {
+  background-color: #b47a63;
+}
+.psychic {
+  background-color: #ff6e80;
+}
+.rock {
+  background-color: #8b3e22;
+}
+.ghost {
+  background-color: #5b4a9c;
+}
+.ice {
+  background-color: #cbe4ff;
+}
+.dragon {
+  background-color: #62cad9;
+}
+#pokedex {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 40px;
+  justify-items: center;
+  background-color: #2b292c;
+  padding: 40px;
+}
+.card:hover {
+  animation: bounce 0.8s linear;
+}
+@keyframes bounce {
+  20% {
+    transform: translateY(-10px);
   }
-  .water{
-    background-color: #71b8c7;
+  40% {
+    transform: translateY(0px);
   }
-  .bug{
-    background-color: #efc42d;
+  60% {
+    transform: translateY(-4px);
   }
-  .normal{
-    background-color: #75525c;
+  80% {
+    transform: translateY(-0px);
   }
-  .poison{
-    background-color: #7b62ac;
-  }
-  .electric{
-    background-color: #f6be1f;
-  }
-  .ground{
-    background-color: #8c6218;
-  }
-  .fairy{
-    background-color: #ffc5b4;
-  }
-  .fighting{
-    background-color: #b47a63;
-  }
-  .psychic{
-    background-color: #ff6e80;
-  }
-  .rock{
-    background-color: #8b3e22;
-  }
-  .ghost{
-    background-color: #5b4a9c;
-  }
-  .ice{
-    background-color: #cbe4ff;
-  }
-  .dragon{
-    background-color: #62cad9;
-  }
-  #pokedex {
-    padding-inline-start: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 40px;
-    justify-items: center;
-    background-color: #2b292c;
-    padding: 40px;
-  }
-  .card:hover {
-    animation: bounce 0.8s linear;
-  }
-  @keyframes bounce {
-    20% {
-      transform: translateY(-10px);
-    }
-    40% {
-      transform: translateY(0px);
-    }
-    60% {
-      transform: translateY(-4px);
-    }
-    80% {
-      transform: translateY(-0px);
-    }
-  }
+}
