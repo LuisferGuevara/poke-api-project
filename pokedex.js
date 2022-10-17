@@ -147,7 +147,7 @@ const renderPokemons = (pokemons) => {
     div$$.classList.add("card-subtitle");
 
     li$$.classList.add(poke.types[0].type.name);
-    li$$.textContent = (`ID: ${poke.id}`)
+    li$$.textContent = (`# ${poke.id}`)
     div$$.textContent += (`${poke.types[0].type.name}`)
 
 

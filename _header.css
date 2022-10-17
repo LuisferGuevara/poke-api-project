@@ -1,0 +1,164 @@
+/*HEADER*/
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 54px;
+  font-family: "PC Senior", sans-serif;
+  -webkit-text-stroke: 0.3px #3663ac;
+}
+.box {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  color: white;
+  padding-bottom: 20px;
+}
+.divFinder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  padding-left: 40px;
+  font-size: 1em;
+  line-height: 1.2em;
+  text-align: center;
+  font-family: "PC Senior", sans-serif;
+}
+.search_input {
+  background-color: transparent;
+  border: 1.5px solid #2b292c;
+  width: 220px;
+  height: 22px;
+  border-radius: 12px;
+  padding: 2px;
+}
+.search_input:focus {
+  outline: none;
+  color: #fff;
+}
+.search_input::placeholder {
+  color: lightslategray;
+  font-size: 15px;
+}
+input[type="text"] {
+  font-size: 18px;
+  text-align: center;
+}
+
+.icons_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  margin-left: 40px;
+  font-size: 16px;
+}
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+  width: 330px;
+  max-width: 330px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+.icon-list::before {
+  content: "  -ALL POKEMONS TYPES-";
+  font-family: "PC Senior", sans-serif;
+  font-size: 10px;
+  text-align: center;
+  margin: 0 15%;
+}
+.icon-imagen {
+  height: 20px;
+  padding-right: 20px;
+  width: 20px;
+  padding-top: 14px;
+}
+
+.icon-imagen img {
+  width: 30px;
+  border: 1px solid #2b292c;
+  border-radius: 18px;
+}
+.icon-imagen img:hover {
+  background-color: lavender;
+  transform: translateY(2px);
+}
+
+.divLink {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.link_to_do {
+  color: white;
+  text-decoration: none;
+  border: 1.5px solid #2b292c;
+  padding: 8px;
+  border-radius: 12px;
+  font-family: "PC Senior", sans-serif;
+  font-size: 12px;
+  word-wrap: break-word;
+  width: 60%;
+  text-align: center;
+  line-height: 1.4em;
+}
+.link_to_do:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+@media only screen and (max-width: 885px) {
+  .box {
+    display: grid;
+    grid-template-areas:
+      "a  b"
+      "a  c";
+    width: 100%;
+  }
+  .divFinder {
+    grid-area: a;
+  }
+  .icon-list {
+    grid-area: b;
+    margin-right: 40px;
+  }
+  .divLink {
+    grid-area: c;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .box {
+    display: grid;
+    justify-content: center;
+    grid-template-areas:
+      "a  a"
+      "b b"
+      "c c";
+    width: 100%;
+  }
+  .divFinder {
+    grid-area: a;
+  }
+  .divLink {
+    grid-area: c;
+
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+}
