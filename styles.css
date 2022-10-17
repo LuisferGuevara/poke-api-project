@@ -130,16 +130,27 @@ input[type="text"] {
   align-items: center;
   padding: 40px;
   background-color: #f4f4f4;
-  color: #222;
+  color: whitesmoke;
   border-radius: 20px;
   width: 200px;
 }
 
 .card-title {
+  color: #222;
   text-transform: uppercase;
   font-size: 32px;
   font-weight: normal;
+  padding-bottom: 20px;
   margin-bottom: 0;
+}
+.card-subtitle {
+  font-weight: lighter;
+  color: #666;
+  margin-top: 5px;
+  text-transform: capitalize;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: rgba(245, 245, 245, 0.413);
 }
 .card-image {
   height: 220px;
