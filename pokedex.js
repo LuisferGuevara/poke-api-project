@@ -37,8 +37,8 @@ const renderSearch = (pokemons) => {
 
   divFinder$$.classList.add("divFinder");
   input$$.setAttribute("type", "text");
-  input$$.setAttribute('placeholder', 'pokemon')
-  p$$.textContent = "Need to find specifically ?";
+  input$$.setAttribute('placeholder', '. . .')
+  p$$.textContent = "Busca tu Pokémon";
   divFinder$$.appendChild(p$$);
   divFinder$$.appendChild(input$$);
 
@@ -48,8 +48,9 @@ const renderSearch = (pokemons) => {
 const toFind = (event) => {
   const inputValue = event.target.value.toLowerCase();
   FILTERED_POKEMONS = ALL_POKEMONS_INFO.filter((pokemon) => {
-    const match = pokemon.name.toLowerCase().includes(inputValue);
-    return match;
+    const matchName = pokemon.name.toLowerCase().includes(inputValue);
+    const matchId = pokemon.id === Number(inputValue)
+    return matchName || matchId
   });
   renderPokemons(FILTERED_POKEMONS);
 };
@@ -58,7 +59,7 @@ const toDoLink = () => {
   const divLink$$ = document.createElement("div");
   const a$$ = document.createElement("a");
   a$$.setAttribute('href', './todo.html')
-  a$$.textContent= 'Create you Adventure'
+  a$$.textContent= 'Crea tu propia Aventura'
   a$$.classList.add('link_to_do');
   divLink$$.classList.add("divLink");
   divLink$$.appendChild(a$$);
@@ -127,6 +128,7 @@ const renderPokemons = (pokemons) => {
     div$$.classList.add("card-subtitle");
 
     li$$.classList.add(poke.types[0].type.name);
+    li$$.textContent = (poke.id)
 
     li$$.appendChild(img$$);
     li$$.appendChild(p$$);

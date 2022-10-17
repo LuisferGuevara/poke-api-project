@@ -1,6 +1,5 @@
 @import url("http://fonts.cdnfonts.com/css/common-pixel");
 @import url("http://fonts.cdnfonts.com/css/pc-senior");
-@import url("http://fonts.cdnfonts.com/css/pokemon-solid");
 
 body {
   background-color: #d53c47;
@@ -33,6 +32,7 @@ h1 {
   width: 250px;
   padding-left: 40px;
   font-size: 1em;
+  line-height: 1.2em;
   text-align: center;
   font-family: "PC Senior", sans-serif;
 }
@@ -42,6 +42,7 @@ h1 {
   width: 220px;
   height: 22px;
   border-radius: 12px;
+  padding: 2px;
 }
 .search_input:focus {
   outline: none;
@@ -88,7 +89,7 @@ input[type="text"] {
   border: 1px solid #2b292c;
   border-radius: 18px;
 }
-.icon-imagen img:hover{
+.icon-imagen img:hover {
   background-color: lavender;
   transform: translateY(2px);
 }
@@ -112,7 +113,7 @@ input[type="text"] {
   text-align: center;
   line-height: 1.4em;
 }
-.link_to_do:hover{
+.link_to_do:hover {
   background-color: whitesmoke;
   color: black;
 }
@@ -138,15 +139,11 @@ input[type="text"] {
   font-weight: normal;
   margin-bottom: 0;
 }
-.card-subtitle {
-  font-weight: lighter;
-  color: #666;
-  margin-top: 5px;
-}
 .card-image {
   height: 220px;
   width: 100%;
 }
+
 .grass {
   background-color: #34c149;
 }

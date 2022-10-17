@@ -1,0 +1,53 @@
+@import url("http://fonts.cdnfonts.com/css/common-pixel");
+@import url("http://fonts.cdnfonts.com/css/pc-senior");
+@import url("http://fonts.cdnfonts.com/css/pokemon-solid");
+
+body {
+  background-color: #d53c47;
+  margin: 0;
+  font-family: rubik;
+  color: white;
+  height: 100vh;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 54px;
+  line-height: 1.2em;
+  font-family: "PC Senior", sans-serif;
+  -webkit-text-stroke: 0.3px #3663ac;
+  width: 80vw;
+  margin: 20px auto;
+}
+#box {
+  height: 70vh;
+  /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 40px; 
+    justify-items: center;*/
+  background-color: #2b292c;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.description {
+  width: 90%;
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 1.4em;
+}
+.divForToDoList{
+    background-color: orange;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    min-width: 450px;
+    position: absolute;
+    min-height: 100px;
+    transform: translate(-50%,-50%);
+}
