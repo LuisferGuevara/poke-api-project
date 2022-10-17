@@ -1,6 +1,6 @@
 @import url("http://fonts.cdnfonts.com/css/common-pixel");
 @import url("http://fonts.cdnfonts.com/css/pc-senior");
-@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+@import url("http://fonts.cdnfonts.com/css/pokemon-solid");
 
 body {
   background-color: #d53c47;
@@ -9,6 +9,8 @@ body {
   color: white;
 }
 
+/*HEADER*/
+
 h1 {
   text-transform: uppercase;
   text-align: center;
@@ -16,35 +18,12 @@ h1 {
   font-family: "PC Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
 }
-.box{
+.box {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   height: 100%;
-}
-.icon-list{
-  list-style: none;
-  padding: 0;
-  width: 330px;
-  max-width: 330px;
-
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  height: 80px;
-
-}
-.icon-imagen{
-  height: 20px;
-padding-right: 20px;
-  width: 20px;
-}
-
-.icon-imagen img{
-  width: 30px;
+  color: white;
 }
 .divFinder {
   display: flex;
@@ -52,7 +31,7 @@ padding-right: 20px;
   justify-content: center;
   align-items: center;
   width: 250px;
-  margin-left: 40px;
+  padding-left: 40px;
   font-size: 1em;
   text-align: center;
   font-family: "PC Senior", sans-serif;
@@ -68,12 +47,16 @@ padding-right: 20px;
   outline: none;
   color: #fff;
 }
+.search_input::placeholder {
+  color: lightslategray;
+  font-size: 15px;
+}
 input[type="text"] {
   font-size: 18px;
   text-align: center;
 }
 
-.icons_div{
+.icons_div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,6 +65,60 @@ input[type="text"] {
   margin-left: 40px;
   font-size: 16px;
 }
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+  width: 330px;
+  max-width: 330px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+.icon-imagen {
+  height: 20px;
+  padding-right: 20px;
+  width: 20px;
+}
+
+.icon-imagen img {
+  width: 30px;
+  border: 1px solid #2b292c;
+  border-radius: 18px;
+}
+.icon-imagen img:hover{
+  background-color: lavender;
+  transform: translateY(2px);
+}
+
+.divLink {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.link_to_do {
+  color: white;
+  text-decoration: none;
+  border: 1.5px solid #2b292c;
+  padding: 8px;
+  border-radius: 12px;
+  font-family: "PC Senior", sans-serif;
+  font-size: 12px;
+  word-wrap: break-word;
+  width: 60%;
+  text-align: center;
+  line-height: 1.4em;
+}
+.link_to_do:hover{
+  background-color: whitesmoke;
+  color: black;
+}
+
+/*POKEDEX*/
+
 .card {
   list-style: none;
   display: flex;
@@ -93,7 +130,6 @@ input[type="text"] {
   color: #222;
   border-radius: 20px;
   width: 200px;
-  
 }
 
 .card-title {

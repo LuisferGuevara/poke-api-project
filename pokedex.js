@@ -37,6 +37,7 @@ const renderSearch = (pokemons) => {
 
   divFinder$$.classList.add("divFinder");
   input$$.setAttribute("type", "text");
+  input$$.setAttribute('placeholder', 'pokemon')
   p$$.textContent = "Need to find specifically ?";
   divFinder$$.appendChild(p$$);
   divFinder$$.appendChild(input$$);
@@ -53,45 +54,18 @@ const toFind = (event) => {
   renderPokemons(FILTERED_POKEMONS);
 };
 
+const toDoLink = () => {
+  const divLink$$ = document.createElement("div");
+  const a$$ = document.createElement("a");
+  a$$.setAttribute('href', './todo.html')
+  a$$.textContent= 'Create you Adventure'
+  a$$.classList.add('link_to_do');
+  divLink$$.classList.add("divLink");
+  divLink$$.appendChild(a$$);
+  box$$.appendChild(divLink$$);
+};
+
 let audioDiv = document.createElement("div");
-
-const renderPokemons = (pokemons) => {
-  pokedex$$.innerHTML = "";
-
-  for (const poke of pokemons) {
-    const li$$ = document.createElement("li");
-    li$$.classList.add("card");
-
-    const img$$ = document.createElement("img");
-    img$$.classList.add("card-image");
-    img$$.src = poke.sprites.front_default;
-    img$$.alt = poke.name;
-
-    const p$$ = document.createElement("p");
-    p$$.classList.add("card-title");
-    p$$.textContent = poke.name;
-
-    const div$$ = document.createElement("div");
-    div$$.classList.add("card-subtitle");
-
-    li$$.classList.add(poke.types[0].type.name);
-
-    li$$.appendChild(img$$);
-    li$$.appendChild(p$$);
-    li$$.appendChild(div$$);
-
-    pokedex$$.appendChild(li$$);
-
-    const cries = "https://play.pokemonshowdown.com/audio/cries/src/" + poke.name + ".wav";
-    li$$.addEventListener("click", () => {
-      audioDiv.innerHTML = `<audio autoplay="autoplay">
-        <source src=${cries} type="audio/x-wav">
-      </audio>`;
-      document.body.appendChild(audioDiv);
-    });
-  }
-}
-
 const renderIcons = () => {
   const pokeIcons = [
     "bug",
@@ -131,7 +105,44 @@ const renderIcons = () => {
   });
 
   box$$.appendChild(listForIcons$$);
-}
+};
+
+const renderPokemons = (pokemons) => {
+  pokedex$$.innerHTML = "";
+
+  for (const poke of pokemons) {
+    const li$$ = document.createElement("li");
+    li$$.classList.add("card");
+
+    const img$$ = document.createElement("img");
+    img$$.classList.add("card-image");
+    img$$.src = poke.sprites.front_default;
+    img$$.alt = poke.name;
+
+    const p$$ = document.createElement("p");
+    p$$.classList.add("card-title");
+    p$$.textContent = poke.name;
+
+    const div$$ = document.createElement("div");
+    div$$.classList.add("card-subtitle");
+
+    li$$.classList.add(poke.types[0].type.name);
+
+    li$$.appendChild(img$$);
+    li$$.appendChild(p$$);
+    li$$.appendChild(div$$);
+
+    pokedex$$.appendChild(li$$);
+
+    const cries = "https://play.pokemonshowdown.com/audio/cries/src/" + poke.name + ".wav";
+    li$$.addEventListener("click", () => {
+      audioDiv.innerHTML = `<audio autoplay="autoplay">
+        <source src=${cries} type="audio/x-wav">
+      </audio>`;
+      document.body.appendChild(audioDiv);
+    });
+  }
+};
 
 //Director de orquesta, irá llamando a otras funciones
 
@@ -158,5 +169,7 @@ async function init() {
 
   input$$.addEventListener("input", () => toFind(event));
   renderIcons();
+
+  toDoLink();
 }
 window.onload = init;
