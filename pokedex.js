@@ -66,8 +66,9 @@ const toFind = (event) => {
   const inputValue = event.target.value.toLowerCase();
   FILTERED_POKEMONS = ALL_POKEMONS_INFO.filter((pokemon) => {
     const matchName = pokemon.name.toLowerCase().includes(inputValue);
+    const matchType = pokemon.types[0].type.name.includes(inputValue)
     const matchId = pokemon.id === Number(inputValue)
-    return matchName || matchId
+    return matchName || matchId || matchType
   });
   renderPokemons(FILTERED_POKEMONS);
 };

@@ -85,9 +85,8 @@ h1 {
 }
 #tasks{
     border-radius: 10px;
-    width: 93%;
-    position: relative;
     background-color: #ffffff;
+    border: 2px solid #d1d3d4;
     height: 90%;
     padding: 30px 20px;
     margin-top: 10px;
