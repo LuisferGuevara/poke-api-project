@@ -11,18 +11,35 @@ const pokedex$$ = document.querySelector("#pokedex");
 const ALL_POKEMONS_INFO = []; // Cuando una variable se declara en el scope global para ser usada por otros, se escribe en mayúsculas
 let FILTERED_POKEMONS = [];
 
-function getAllPokemons() {
-  return fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
+
+const getAllPokemons = () =>
+  fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
     .then((response) => response.json())
     .then((response) => response.results)
     .catch((error) => console.log("Error obteniendo todos los pokemos", error));
+
+const getOnePokemon = async (url) =>{
+  try{
+    const response = await fetch(url);
+    const result = await response.json();
+    const pokemon = {
+      name: result.name,
+      id: result.id,
+      type:[],
+      imagen: result.sprites.front_default,
+
+    }
+    return result
+  }catch (error){
+    console.log("Error obteniendo pokemon individual"+ url + error);
+  }
+  //  fetch(url)
+  //   .then((response) => response.json())
+  //   .then((response) => response)
+  //   .catch((error) => console.log("Error obteniendo pokemon individual", error));
+   
 }
-function getOnePokemon(url) {
-  return fetch(url)
-    .then((response) => response.json())
-    .then((response) => response)
-    .catch((error) => console.log("Error obteniendo pokemon individual", error));
-}
+
 
 const input$$ = document.createElement("input");
 input$$.classList.add("search_input");
@@ -109,6 +126,7 @@ const renderIcons = () => {
 };
 
 const renderPokemons = (pokemons) => {
+
   pokedex$$.innerHTML = "";
 
   for (const poke of pokemons) {
@@ -148,7 +166,7 @@ const renderPokemons = (pokemons) => {
 
 //Director de orquesta, irá llamando a otras funciones
 
-async function init() {
+const init = async ()=> {
   console.log("Ejecutando peticiones pokedex... ");
 
   const allPokemons = await getAllPokemons(); // array de onjetos con name y url por cada pokemon

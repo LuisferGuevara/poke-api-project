@@ -25,7 +25,7 @@ document.querySelector('#push').onclick = function(){
                 <span id="taskname">
                     ${document.querySelector('#newtask input').value}
                 </span>
-                <button class="delete">X</button>
+                <button class="delete" style = 'background-color: #f7cd00; width:40px; color: black; '>X</button>
             </div>
         `;
 

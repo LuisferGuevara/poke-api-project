@@ -18,6 +18,8 @@ h1 {
   -webkit-text-stroke: 0.3px #3663ac;
 }
 .box {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -198,6 +200,8 @@ input[type="text"] {
   justify-items: center;
   background-color: #2b292c;
   padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .card:hover {
   animation: bounce 0.8s linear;

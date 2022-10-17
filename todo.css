@@ -1,6 +1,6 @@
-@import url("http://fonts.cdnfonts.com/css/common-pixel");
+
 @import url("http://fonts.cdnfonts.com/css/pc-senior");
-@import url("http://fonts.cdnfonts.com/css/pokemon-solid");
+
 
 body {
   background-color: #d53c47;
@@ -19,19 +19,18 @@ h1 {
   -webkit-text-stroke: 0.3px #3663ac;
   width: 80vw;
   margin: 20px auto;
+  max-width: 1200px;
 }
 #box {
   height: 70vh;
-  /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 40px; 
-    justify-items: center;*/
   background-color: #2b292c;
   padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .description {
@@ -39,6 +38,7 @@ h1 {
   font-size: 1.2em;
   text-align: center;
   line-height: 1.4em;
+  padding-bottom: 30px;
 }
 .divForToDoList{
     background-color: #d53c47;;
@@ -46,25 +46,22 @@ h1 {
     height: auto;
     max-height: 600px;
     border-radius: 12px;
-    /* top: 35%;
-    left: 50%;
-    border-radius: 10px;
-    min-width: 450px;
-    position: absolute;
-    min-height: 100px;
-    transform: translate(-50%,-50%); */
+    padding: 0 20px;
+}
+.inputbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 #newtask{
-    position: relative;
     padding: 30px 20px;
 }
 #newtask input{
     width: 70%;
-    max-height: 30px;
+    max-height: 20px;
     padding: 10px;
-    margin-top: 10px;
     color: #111111;
-    font-weight: 500;
     position: relative;
     border-radius: 5px;
     font-size: 15px;
@@ -75,28 +72,28 @@ h1 {
     border-color: #3663ac;;
 }
 #newtask button{
-    position: relative;
-    float: right;
-    font-weight: 500;
     font-size: 16px;
     background-color: transparent;
     border: 1px solid #2b292c;
     color: #ffffff;
     cursor: pointer;
     outline: none;
-    width: 20%;
-    height: 45px;
+    width: 16%;
+    height: 40px;
     border-radius: 5px;
-    margin-top: 5px;
+
 }
 #tasks{
     border-radius: 10px;
-    width: 90%;
+    width: 93%;
     position: relative;
     background-color: #ffffff;
     height: 90%;
     padding: 30px 20px;
     margin-top: 10px;
+    height: auto;
+    max-height: 420px;
+    overflow: scroll;
 }
 
 .task{
@@ -116,16 +113,4 @@ h1 {
     font-size: 15px;
     font-weight: 400;
 }
-.task button{
-    background-color: #0a2ea4;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    height: 100%;
-    width: 40px;
-    border-radius: 5px;
-}
-.delete{
-;
-}
+
