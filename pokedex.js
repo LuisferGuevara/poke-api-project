@@ -73,11 +73,11 @@ const toFind = (event) => {
   renderPokemons(FILTERED_POKEMONS);
 };
 
-const toDoLink = () => {
+const rendertoDoLink = () => {
   const divLink$$ = document.createElement("div");
   const a$$ = document.createElement("a");
   a$$.setAttribute('href', './todo.html')
-  a$$.textContent= 'Crea tu propia Aventura'
+  a$$.textContent= 'Ordena tu próxima aventura'
   a$$.classList.add('link_to_do');
   divLink$$.classList.add("divLink");
   divLink$$.appendChild(a$$);
@@ -190,10 +190,10 @@ const init = async ()=> {
 
   renderPokemons(ALL_POKEMONS_INFO);
   renderSearch(ALL_POKEMONS_INFO);
+  renderIcons();
+  rendertoDoLink();
 
   input$$.addEventListener("input", () => toFind(event));
-  renderIcons();
-
-  toDoLink();
+ 
 }
 window.onload = init;

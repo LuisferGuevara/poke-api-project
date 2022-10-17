@@ -153,10 +153,16 @@ input[type="text"] {
   }
   .divFinder {
     grid-area: a;
+    padding-left: 90px;
+    padding-bottom: 16px;
+  }
+  .icon-list {
+    grid-area: b;
+    padding-left: 40px;
+    padding-bottom: 16px;
   }
   .divLink {
     grid-area: c;
-
     display: flex;
     justify-content: center;
     padding-top: 10px;
