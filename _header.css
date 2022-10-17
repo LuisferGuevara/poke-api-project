@@ -79,6 +79,7 @@ input[type="text"] {
   margin: 0 15%;
 }
 .icon-imagen {
+    cursor: pointer;
   height: 20px;
   padding-right: 20px;
   width: 20px;
@@ -124,7 +125,7 @@ input[type="text"] {
     display: grid;
     grid-template-areas:
       "a  b"
-      "a  c";
+      "c  c";
     width: 100%;
   }
   .divFinder {
