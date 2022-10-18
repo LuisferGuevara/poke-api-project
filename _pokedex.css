@@ -10,7 +10,7 @@
   max-width: 1600px;
   margin: 0 auto;
 }
-#cargando {
+#loading {
   font-family: "PC Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   font-size: 35px;

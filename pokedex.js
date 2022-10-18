@@ -199,8 +199,6 @@ const renderPokemons = (pokemons) => {
 };
 
 const init = async () => {
-  // console.log("Ejecutando peticiones pokedex... ");
-
   const allPokemons = await getAllPokemons();
 
   for (const pokemon of allPokemons) {

@@ -9,7 +9,6 @@ body {
   padding: 3vw;
 }
 .container{
-
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -34,7 +33,7 @@ h1 {
   font-size: 50px;
   font-family: "PC Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
-  margin: 20px auto;
+  margin: 0 auto;
   padding-bottom: 20px;
 }
 #box {
@@ -87,7 +86,7 @@ h1 {
   padding-top: 20px;
   margin-left: 80px;
   padding-bottom: 20px;
-  margin-bottom: 40px;
+
 }
 
 .hole {
@@ -98,11 +97,9 @@ h1 {
 .dugtrio {
   object-fit: contain;
   height: 120px;
-
   width: 150px;
 }
 .timer {
-  padding: 40px;
   font-family: "PC Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   font-size: 22px;
@@ -115,7 +112,7 @@ button {
   color: #fff;
   background-color: #3663ac;
   border-radius: 10px;
-  margin-top: 150px;
+  margin-top: 20px;
   border: 2px solid black;
   font-family: "PC Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
