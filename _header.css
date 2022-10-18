@@ -7,6 +7,23 @@ h1 {
   font-family: "PC Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
 }
+.container{
+    padding-top: 20px;
+}
+.game_link{
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: "PC Senior", sans-serif;
+    font-size: 12px;
+    border: 1.5px solid #2b292c;
+    border-radius: 12px;
+    padding: 6px;
+    margin-left: 10px;
+    }
+    .game_link:hover{
+        background-color: whitesmoke;
+  color: black;
+    }
 .box {
   max-width: 1800px;
   margin: 0 auto;
@@ -17,6 +34,7 @@ h1 {
   color: white;
   padding-bottom: 20px;
 }
+
 .divFinder {
   display: flex;
   flex-direction: column;

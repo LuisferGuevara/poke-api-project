@@ -33,6 +33,8 @@ input$$.classList.add("search_input");
 const container$$ = document.querySelector(".container");
 const box$$ = document.createElement("div");
 box$$.classList.add("box");
+const h1$$ = document.querySelector("h1");
+// console.log(h1$$);
 container$$.insertBefore(box$$, pokedex$$);
 
 const renderSearch = (pokemons) => {
@@ -48,24 +50,37 @@ const renderSearch = (pokemons) => {
 
   box$$.appendChild(divFinder$$);
 };
+const renderMessage = () => {
+  const messageNotFound$$ = document.createElement("h2");
+  messageNotFound$$.textContent = "pokemons no encontrado";
+  // box$$.appendChild(messageNotFound$$)
+};
+renderMessage();
 
 const toFind = (event) => {
   const inputValue = event.target.value.toLowerCase();
+  inputValue.length === 0 ? (FILTERED_POKEMONS = ALL_POKEMONS_INFO) : null;
   FILTERED_POKEMONS = ALL_POKEMONS_INFO.filter((pokemon) => {
-    const matchName = pokemon.name.toLowerCase().includes(inputValue);
-    const matchType = pokemon.types.map((element) => element.type.name).includes(inputValue);
-    const matchId = pokemon.id === Number(inputValue);
-    if (
-      inputValue === 0
-    ) {
-      return console.log('jaja');
+    const types = pokemon.types.map((type) => type.type.name.toLowerCase());
+    if (currentFilter && !types.includes(currentFilter)) {
+      return false;
     }
+    const matchName = pokemon.name.toLowerCase().includes(inputValue);
+
+    matchType = types.includes(inputValue);
+
+    console.log(pokemon.id, Number(inputValue));
+    const matchId = pokemon.id.toString().indexOf(Number(inputValue)) > -1;
+
     return matchName || matchId || matchType;
   });
   renderPokemons(FILTERED_POKEMONS);
 };
 
-const rendertoDoLink = () => {
+let currentFilter = null;
+
+
+const renderToDoLink = () => {
   const divLink$$ = document.createElement("div");
   const a$$ = document.createElement("a");
   a$$.setAttribute("href", "./todo.html");
@@ -76,6 +91,17 @@ const rendertoDoLink = () => {
   box$$.appendChild(divLink$$);
 };
 
+const renderGameLink = () => {
+  const gameDiv$$ = document.createElement("div");
+  const a$$ = document.createElement("a");
+  a$$.setAttribute("href", "./molebuster.html");
+  a$$.textContent = "minigame";
+  a$$.classList.add("game_link");
+  gameDiv$$.classList.add("gameDiv");
+  gameDiv$$.appendChild(a$$);
+
+  container$$.insertBefore(gameDiv$$, h1$$);
+};
 let audioDiv = document.createElement("div");
 const renderIcons = () => {
   const pokeIcons = [
@@ -104,11 +130,21 @@ const renderIcons = () => {
     const image$$ = document.createElement("img");
     image$$.src = `./assets/images/${element}.png`;
     image$$.addEventListener("click", () => {
-      FILTERED_POKEMONS = FILTERED_POKEMONS.filter((pokemon) => {
+      // console.log(currentFilter, element);
+      if(currentFilter === element){
+        // console.log('desactivedfilter',currentFilter, element);
+        currentFilter = null
+        image$$.classList.remove('type_active');
+      }else{
+        // console.log('active', currentFilter, element);
+        currentFilter = element
+        image$$.classList.add('type_active');
+      }
+      FILTERED_POKEMONS = ALL_POKEMONS_INFO.filter((pokemon) => {
         return pokemon.types[0].type.name === element;
       });
       renderPokemons(FILTERED_POKEMONS);
-      FILTERED_POKEMONS = ALL_POKEMONS_INFO;
+      // FILTERED_POKEMONS = ALL_POKEMONS_INFO;
     });
 
     listItem.appendChild(image$$);
@@ -120,6 +156,19 @@ const renderIcons = () => {
 
 const renderPokemons = (pokemons) => {
   pokedex$$.innerHTML = "";
+  if (pokemons.length === 0) {
+    const divMessage$$ = document.createElement("div");
+    divMessage$$.classList.add("divMessage");
+
+    const message$$ = document.createElement("p");
+    const img$$ = document.createElement("img");
+    img$$.src = "./assets/images/brokenball.png";
+    message$$.textContent = "No_Pokemons_Were_Found";
+    message$$.classList.add("not_found_message");
+    divMessage$$.appendChild(message$$);
+    divMessage$$.appendChild(img$$);
+    pokedex$$.appendChild(divMessage$$);
+  }
 
   for (const poke of pokemons) {
     const li$$ = document.createElement("li");
@@ -163,7 +212,7 @@ const renderPokemons = (pokemons) => {
 };
 
 const init = async () => {
-  console.log("Ejecutando peticiones pokedex... ");
+  // console.log("Ejecutando peticiones pokedex... ");
 
   const allPokemons = await getAllPokemons();
 
@@ -174,12 +223,13 @@ const init = async () => {
   }
   // console.log('Todos la info de cada pokemon:', ALL_POKEMONS_INFO);
 
-  console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
+  // console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
 
   renderPokemons(ALL_POKEMONS_INFO);
   renderSearch(ALL_POKEMONS_INFO);
   renderIcons();
-  rendertoDoLink();
+  renderToDoLink();
+  renderGameLink();
 
   input$$.addEventListener("input", () => toFind(event));
 };

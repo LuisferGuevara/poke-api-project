@@ -10,6 +10,23 @@
   max-width: 1600px;
   margin: 0 auto;
 }
+#cargando{
+    font-family: "PC Senior", sans-serif;
+  -webkit-text-stroke: 0.3px #3663ac;
+  font-size: 35px;
+}
+.divMessage{
+display: flex;
+flex-direction: row-reverse;
+align-items: center;
+}
+.divMessage img{
+}
+.not_found_message{
+    font-family: "PC Senior", sans-serif;
+    -webkit-text-stroke: 0.3px #3663ac;
+    font-size: 35px;
+}
 .card {
   list-style: none;
   display: flex;
@@ -44,6 +61,9 @@
 .card-image {
   height: 220px;
   width: 100%;
+}
+.type_active{
+    transform: scale(1.5);
 }
 .card:hover {
   animation: bounce 0.8s linear;

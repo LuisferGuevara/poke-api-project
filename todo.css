@@ -22,7 +22,7 @@ h1 {
   max-width: 1200px;
 }
 #box {
-  height: 70vh;
+  height: 80vh;
   background-color: #2b292c;
   padding: 40px;
   display: flex;
@@ -44,7 +44,7 @@ h1 {
     background-color: #d53c47;;
     width: 70%;
     height: auto;
-    max-height: 600px;
+    max-height: 80%;
     border-radius: 12px;
     padding: 0 20px;
 }
@@ -91,7 +91,7 @@ h1 {
     padding: 30px 20px;
     margin-top: 10px;
     height: auto;
-    max-height: 420px;
+    max-height: 30vh;
     overflow: scroll;
 }
 
