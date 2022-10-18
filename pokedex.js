@@ -117,6 +117,9 @@ const renderIcons = () => {
     image$$.src = `./assets/images/${element}.png`;
     image$$.addEventListener("click", () => {
       // console.log(currentFilter, element);
+      const hasClass$$ = document.querySelector('.type_active');
+      hasClass$$ ? hasClass$$.classList.remove("type_active") : null
+
       if (currentFilter === element) {
         // console.log('desactivedfilter',currentFilter, element);
         currentFilter = null;
