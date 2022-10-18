@@ -90,8 +90,12 @@ h1 {
 .hole {
   overflow: hidden;
   position: relative;
-  padding: 10px;
+
   padding-bottom: 80px;
+}
+.digglet{
+  background-color: gold;
+width: 100%;
 }
 
 /* .hole:after {
