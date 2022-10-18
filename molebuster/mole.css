@@ -80,7 +80,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 600px;
+  max-width: 500px;
   padding-top: 80px;
   padding-left: 80px;
 
@@ -88,14 +88,16 @@ h1 {
 }
 
 .hole {
+  background-color: red;
   overflow: hidden;
   position: relative;
-
+width: 150px;
   padding-bottom: 80px;
 }
-.digglet{
+.dugtrio{
   background-color: gold;
 width: 100%;
+width: 150px;
 }
 
 /* .hole:after {
