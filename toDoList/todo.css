@@ -8,6 +8,10 @@ body {
   color: white;
   height: 100vh;
 }
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 h1 {
   text-transform: uppercase;
@@ -28,7 +32,7 @@ h1 {
   border: 1.5px solid #2b292c;
   border-radius: 12px;
   padding: 10px;
-  margin-left: 20px;
+
 }
 .goback:hover {
   background-color: #2b292c;

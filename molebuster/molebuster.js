@@ -1,98 +1,92 @@
-const gameBox$$ = document.querySelector('.game--container');
-const playButton$$ = document.querySelector('button');
+const gameBox$$ = document.querySelector(".game--container");
+const playButton$$ = document.querySelector("button");
 const holeImg$$ = "../molebuster/dirt.png";
 const dugtriotImg$$ = "../molebuster/dugtrio.png";
 let score$$ = 0;
 
 const play = () => {
-    const findHoles$$ = document.querySelectorAll('.hole');
-    console.log(findHoles$$);
-    
-    let timeOut = 1000;
-    let before = 0;
+  const findHoles$$ = document.querySelectorAll(".hole");
+  
+  let timeOut = 1000;
+  let before = 0;
 
-    for (let i = 20; i >= 0 ; i--) {
-        let random = Math.floor(Math.random()*9);
-        setTimeout(() => {
-            if(i != 0){
-                const count$$ = document.querySelector('.count');
-                findHoles$$[before].setAttribute('src', holeImg$$);
-                findHoles$$[before].classList.replace('hole', 'dugtrio');
-                
-                findHoles$$[random].setAttribute('src', dugtriotImg$$);
-                findHoles$$[random].classList.replace('hole', 'dugtrio');
-                before = random;
-            if(i<31){
-                count$$.textContent = `00:${i}`;
-                count$$.style = "color: white";
-            }
-            if(i<11){
-                count$$.textContent = `00:0${i}`;
-                count$$.style = "color: red";
-            }else{
-                count$$.textContent = `00:${i}`;
-                count$$.style = "color: white";
-            }
-               
-            }else{
-                const count$$ = document.querySelector('.count');
-                findHoles$$[random].setAttribute('src', holeImg$$);
-                findHoles$$[random].classList.replace('dugtrio','hole');
-                count$$.textContent = `00:0${i}`;
+  for (let i = 25; i >= 0; i--) {
+    let random = Math.floor(Math.random() * 9);
+    setTimeout(() => {
+      if (i != 0) {
+        const count$$ = document.querySelector(".count");
+        findHoles$$[before].setAttribute("src", holeImg$$);
+        findHoles$$[before].classList.replace("hole", "dugtrio");
 
-                // validation();
+        findHoles$$[random].setAttribute("src", dugtriotImg$$);
+        findHoles$$[random].classList.replace("hole", "dugtrio");
+        before = random;
+        if (i < 26) {
+          count$$.textContent = `00:${i}`;
+          count$$.classList.add("timer");
+          count$$.style = "color: white";
+        }
+        if (i < 11) {
+          count$$.textContent = `00:0${i}`;
+          count$$.style = "color: red";
+        }
+        if(i === 10){
+            count$$.textContent = `00:${i}`;
+            count$$.style = "color: red";
+        } else {
+          count$$.textContent = `00:${i}`;
+          count$$.style = "color: white";
+        }
+      } else {
+        const count$$ = document.querySelector(".count");
+        findHoles$$[random].setAttribute("src", holeImg$$);
+        findHoles$$[random].classList.replace("dugtrio", "hole");
+        count$$.textContent = `00:0${i}`;
 
-            }
+        validation();
+      }
+    }, timeOut);
 
-        }, timeOut)
+    timeOut += 1000;
+  }
+};
 
-        timeOut += 1000;
-        
-    }
-
-
-}
-
-const toStrike = (hole$$) =>{
-    console.log(hole$$);
-  if(hole$$.className.includes('dugtrio')){
+const toStrike = (hole$$) => {
+  console.log(hole$$);
+  if (hole$$.className.includes("dugtrio")) {
     score$$ += 1;
-    let updateScore = document.querySelector('.score');
+    let updateScore = document.querySelector(".score");
     updateScore.textContent = `Score: ${score$$}`;
   }
+};
 
-}
+const renderGame = () => {
+  gameBox$$.innerHTML = "<div class='game'></div>";
 
-const renderGame = () =>{
-    gameBox$$.innerHTML = "<div class='game'></div>";
+  score$$ = 0;
 
-    score$$ = 0;
+  let updateScore$$ = document.querySelector(".score");
+  updateScore$$.textContent = ("Score :", score$$);
 
-    let updateScore$$ = document.querySelector('.score');
-    updateScore$$.textContent = ('Score :', score$$) 
+  for (let i = 0; i < 9; i++) {
+    const div$$ = document.querySelector(".game");
+    const hole$$ = document.createElement("img");
 
-    for (let i = 0; i < 9; i++) {
-        const div$$ = document.querySelector('.game');
-        const hole$$ = document.createElement('img');
+    hole$$.addEventListener("click", () => toStrike(hole$$));
 
-        hole$$.addEventListener('click', () => toStrike(hole$$))
+    hole$$.setAttribute("src", holeImg$$);
+    hole$$.classList.add("hole");
 
-        hole$$.setAttribute('src', holeImg$$);
-        hole$$.classList.add('hole')
+    div$$.appendChild(hole$$);
+  }
 
-        div$$.appendChild(hole$$)
-    }
-    
-    play();
+  play();
+};
 
+const validation = () => {
+  if (score$$ >= 24) {
+    gameBox$$.innerHTML = `<div class="result"><h3>POKEMON CATCHED!!</h3></div>`;
+  } else gameBox$$.innerHTML = `<div class="result"><h3>POKEMON HAS SCAPE!!!</h3></div>`;
+};
 
-
-
-}
-
-// const validation = () =>{
-//     if(score)
-
-// };
-playButton$$.addEventListener('click', ()=> renderGame())
-
+playButton$$.addEventListener("click", () => renderGame());

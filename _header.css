@@ -9,6 +9,8 @@ h1 {
 }
 .container {
   padding-top: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 .game_link {
   text-decoration: none;
@@ -25,6 +27,7 @@ h1 {
   color: black;
 }
 .box {
+  border-radius: 12px;
   max-width: 1800px;
   margin: 0 auto;
   display: flex;

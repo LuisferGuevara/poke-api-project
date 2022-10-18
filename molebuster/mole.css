@@ -6,9 +6,15 @@ body {
   font-family: rubik;
   color: white;
   height: 100vh;
-  padding: 40px;
+  padding: 3vw;
+}
+.container{
+
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .goback {
+
   text-decoration: none;
   font-family: "PC Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
@@ -16,6 +22,7 @@ body {
   border: 1.5px solid #2b292c;
   border-radius: 12px;
   padding: 10px;
+  
 }
 .goback:hover {
   background-color: #2b292c;
@@ -24,24 +31,22 @@ body {
 h1 {
   text-transform: uppercase;
   text-align: center;
-  font-size: 54px;
-  line-height: 1.2em;
+  font-size: 50px;
   font-family: "PC Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
-  width: 80vw;
   margin: 20px auto;
-  max-width: 1200px;
+  padding-bottom: 20px;
 }
 #box {
   height: 80vh;
   background-color: #2b292c;
-  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 40px auto;
+  border-radius: 12px;
 }
 
 .score {
@@ -76,57 +81,31 @@ h1 {
   height: 100%;
 }
 .game--container {
-  background-color: gold;
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 500px;
-  padding-top: 80px;
-  padding-left: 80px;
-
-
+  padding-top: 20px;
+  margin-left: 80px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 
-.hole {
-  background-color: red;
-  overflow: hidden;
-  position: relative;
-width: 150px;
-  padding-bottom: 80px;
-}
-.dugtrio{
-  background-color: gold;
-width: 100%;
-width: 150px;
-}
-
-/* .hole:after {
-  display: block;
-  background: url(dirt.png) bottom center no-repeat;
-  background-size: contain;
-  content: "";
-  width: 100%;
-  height: 90px;
-  position: absolute;
-  z-index: 2;
-  bottom: -30px;
-} */
-
-.mole {
-  background: url("mole.png") bottom center no-repeat;
-  background-size: 80%;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  height: 100%;
-  transition: all 0.4s;
-}
 .hole {
   width: 150px;
+  height: 120px;
+  object-fit: contain;
 }
+.dugtrio {
+  object-fit: contain;
+  height: 120px;
 
-.hole.up .mole {
-  top: 0;
+  width: 150px;
+}
+.timer {
+  padding: 40px;
+  font-family: "PC Senior", sans-serif;
+  -webkit-text-stroke: 0.3px #3663ac;
+  font-size: 22px;
 }
 
 button {
@@ -136,8 +115,7 @@ button {
   color: #fff;
   background-color: #3663ac;
   border-radius: 10px;
-  margin-left: 20px;
-  margin-top: 90px;
+  margin-top: 150px;
   border: 2px solid black;
   font-family: "PC Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
@@ -148,77 +126,30 @@ button:hover {
   background-color: #f7cd00;
   color: #2b292c;
 }
-/* 
-@media (min-width: 667px) and (max-width: 1024px) {
-  h1 {
-    display: none;
-  }
-  .score {
-    /* background: blue;
-    padding: 0 12px;
-    line-height: 1;
-    border-radius: 16px;
-    color: #fff;
-    margin-left: 20px; 
-  }
 
-  .hole.up .mole {
-    top: 17px;
-  }
+.result {
+  padding-right: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result h3 {
+  font-family: "PC Senior", sans-serif;
+  -webkit-text-stroke: 0.3px #3663ac;
+  font-size: 22px;
 }
 
-@media (max-width: 667px) {
-  .game {
-    width: 667px;
-    height: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
+@media only screen and (max-width: 600px) {
+  .gifdiv,
+  .ashdiv {
+    width: 60px;
+    height: 120px;
+    top: 40px;
   }
-
-  .score {
-    width: 35px;
-    font-size: 15px;
-    height: 40px;
-    color: #fff;
-    background-color: blue;
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-    padding: 5px;
+  .result {
+    padding-right: 60px;
   }
-
-  button {
-    margin: 10px 10px 10px 10px;
-    height: 40px;
-    width: 75px;
-    font-size: 15px;
+  .result h3 {
+    font-size: 16px;
   }
-
-  .hole:after {
-    display: block;
-    background: url(dirt.png) bottom center no-repeat;
-    background-size: contain;
-    content: "";
-    max-width: 70%;
-    height: 60px;
-    position: absolute;
-    z-index: 2;
-    bottom: -30px;
-  }
-
-  .mole {
-    background: url("mole.png") bottom center no-repeat;
-    background-size: 60%;
-    position: absolute;
-    top: 100%;
-    max-width: 70%;
-    height: 70%;
-    transition: all 0.4s;
-  }
-
-  .hole.up .mole {
-    top: 50px;
-  }
-} 
-*/
+}
