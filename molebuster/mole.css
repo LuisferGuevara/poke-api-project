@@ -1,6 +1,4 @@
-
 @import url("http://fonts.cdnfonts.com/css/pc-senior");
-
 
 body {
   background-color: #d53c47;
@@ -10,7 +8,19 @@ body {
   height: 100vh;
   padding: 40px;
 }
-
+.goback {
+  text-decoration: none;
+  font-family: "PC Senior", sans-serif;
+  -webkit-text-stroke: 0.3px #3663ac;
+  color: white;
+  border: 1.5px solid #2b292c;
+  border-radius: 12px;
+  padding: 10px;
+}
+.goback:hover {
+  background-color: #2b292c;
+  color: whitesmoke;
+}
 h1 {
   text-transform: uppercase;
   text-align: center;
@@ -31,43 +41,60 @@ h1 {
   align-items: center;
   position: relative;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .score {
-  background: rgb(53, 132, 159);
-  padding: 0 48px;
+  background: #3663ac;
+  padding: 12px;
   line-height: 1;
   border-radius: 16px;
   color: #fff;
   margin-left: 15px;
   border: 2px solid black;
+  font-family: "PC Senior", sans-serif;
+  font-size: 14px;
 }
-.ashdiv{
+.gifdiv {
+  top: 50px;
+  left: 40px;
+  position: absolute;
+  height: 170px;
+}
+.gifdiv img {
+  width: 100%;
+  height: 100%;
+}
+.ashdiv {
   top: 20px;
   right: 20px;
   position: absolute;
   height: 200px;
 }
-.ashdiv img{
+.ashdiv img {
   width: 100%;
   height: 100%;
 }
-.game {
-  width: 600px;
-  height: 400px;
+.game--container {
+  background-color: gold;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  justify-content: center;
+  max-width: 600px;
+  padding-top: 80px;
+  padding-left: 80px;
+
+
 }
 
 .hole {
-  flex: 1 0 33.33%;
   overflow: hidden;
   position: relative;
+  padding: 10px;
+  padding-bottom: 80px;
 }
 
-.hole:after {
+/* .hole:after {
   display: block;
   background: url(dirt.png) bottom center no-repeat;
   background-size: contain;
@@ -77,7 +104,7 @@ h1 {
   position: absolute;
   z-index: 2;
   bottom: -30px;
-}
+} */
 
 .mole {
   background: url("mole.png") bottom center no-repeat;
@@ -87,6 +114,9 @@ h1 {
   width: 100%;
   height: 100%;
   transition: all 0.4s;
+}
+.hole {
+  width: 150px;
 }
 
 .hole.up .mole {
@@ -98,25 +128,32 @@ button {
   font-size: 35px;
   height: 70px;
   color: #fff;
-  background-color: rgb(53, 132, 159);
+  background-color: #3663ac;
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 90px;
   border: 2px solid black;
+  font-family: "PC Senior", sans-serif;
+  -webkit-text-stroke: 0.3px #3663ac;
+  font-size: 22px;
+  cursor: pointer;
 }
-
+button:hover {
+  background-color: #f7cd00;
+  color: #2b292c;
+}
+/* 
 @media (min-width: 667px) and (max-width: 1024px) {
   h1 {
     display: none;
   }
   .score {
-    background: blue;
+    /* background: blue;
     padding: 0 12px;
     line-height: 1;
     border-radius: 16px;
     color: #fff;
-    font-size: 40px;
-    margin-left: 20px;
+    margin-left: 20px; 
   }
 
   .hole.up .mole {
@@ -177,4 +214,5 @@ button {
   .hole.up .mole {
     top: 50px;
   }
-}
+} 
+*/

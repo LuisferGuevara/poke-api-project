@@ -1,8 +1,5 @@
-
 @import url("http://fonts.cdnfonts.com/css/pc-senior");
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 
 body {
   background-color: #d53c47;
@@ -23,6 +20,20 @@ h1 {
   margin: 20px auto;
   max-width: 1200px;
 }
+.goback {
+  text-decoration: none;
+  font-family: "PC Senior", sans-serif;
+  -webkit-text-stroke: 0.3px #3663ac;
+  color: white;
+  border: 1.5px solid #2b292c;
+  border-radius: 12px;
+  padding: 10px;
+  margin-left: 20px;
+}
+.goback:hover {
+  background-color: #2b292c;
+  color: whitesmoke;
+}
 #box {
   height: 80vh;
   background-color: #2b292c;
@@ -32,7 +43,7 @@ h1 {
   align-items: center;
   position: relative;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .description {
@@ -42,76 +53,73 @@ h1 {
   line-height: 1.4em;
   padding-bottom: 30px;
 }
-.divForToDoList{
-    background-color: #d53c47;;
-    width: 70%;
-    height: auto;
-    max-height: 80%;
-    border-radius: 12px;
-    padding: 0 20px;
+.divForToDoList {
+  background-color: #d53c47;
+  width: 70%;
+  height: auto;
+  max-height: 80%;
+  border-radius: 12px;
+  padding: 0 20px;
 }
-.inputbox{
+.inputbox {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
-#newtask{
-    padding: 30px 20px;
+#newtask {
+  padding: 30px 20px;
 }
-#newtask input{
-    width: 70%;
-    max-height: 20px;
-    padding: 10px;
-    color: #111111;
-    position: relative;
-    border-radius: 5px;
-    font-size: 15px;
-    border: 2px solid #d1d3d4;
+#newtask input {
+  width: 70%;
+  max-height: 20px;
+  padding: 10px;
+  color: #111111;
+  position: relative;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
 }
-#newtask input:focus{
-    outline: none;
-    border-color: #3663ac;;
+#newtask input:focus {
+  outline: none;
+  border-color: #3663ac;
 }
-#newtask button{
-    font-size: 16px;
-    background-color: transparent;
-    border: 1px solid #2b292c;
-    color: #ffffff;
-    cursor: pointer;
-    outline: none;
-    width: 16%;
-    height: 40px;
-    border-radius: 5px;
-
+#newtask button {
+  font-size: 16px;
+  background-color: transparent;
+  border: 1px solid #2b292c;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  width: 16%;
+  height: 40px;
+  border-radius: 5px;
 }
-#tasks{
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #d1d3d4;
-    height: 90%;
-    padding: 30px 20px;
-    margin-top: 10px;
-    height: auto;
-    max-height: 30vh;
-    overflow: scroll;
+#tasks {
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 2px solid #d1d3d4;
+  height: 90%;
+  padding: 30px 20px;
+  margin-top: 10px;
+  height: auto;
+  max-height: 30vh;
+  overflow: scroll;
 }
 
-.task{
-    border-radius: 5px;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid #939697;
-    cursor: pointer;
-    background-color: #d53c47;
-    height: 50px;
-    margin-bottom: 8px;
-    padding: 5px 10px;
-    display: flex;
+.task {
+  border-radius: 5px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #939697;
+  cursor: pointer;
+  background-color: #d53c47;
+  height: 50px;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  display: flex;
 }
-.task span{
-    font-family: 'Poppins',sans-serif;
-    font-size: 15px;
-    font-weight: 400;
+.task span {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
 }
-

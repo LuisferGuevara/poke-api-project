@@ -66,8 +66,6 @@ const toFind = (event) => {
   renderPokemons(FILTERED_POKEMONS);
 };
 
-
-
 const renderToDoLink = () => {
   const divLink$$ = document.createElement("div");
   const a$$ = document.createElement("a");
@@ -119,22 +117,21 @@ const renderIcons = () => {
     image$$.src = `./assets/images/${element}.png`;
     image$$.addEventListener("click", () => {
       // console.log(currentFilter, element);
-      if(currentFilter === element){
+      if (currentFilter === element) {
         // console.log('desactivedfilter',currentFilter, element);
-        currentFilter = null
-        image$$.classList.remove('type_active');
+        currentFilter = null;
+        image$$.classList.remove("type_active");
         FILTERED_POKEMONS = ALL_POKEMONS_INFO;
-      }else{
+      } else {
         // console.log('active', currentFilter, element);
-        currentFilter = element
-        image$$.classList.add('type_active');
+        currentFilter = element;
+        image$$.classList.add("type_active");
         FILTERED_POKEMONS = ALL_POKEMONS_INFO.filter((pokemon) => {
           return pokemon.types[0].type.name === element;
         });
       }
-      
+
       renderPokemons(FILTERED_POKEMONS);
-      
     });
 
     listItem.appendChild(image$$);
@@ -214,7 +211,7 @@ const init = async () => {
   // console.log('Todos la info de cada pokemon:', ALL_POKEMONS_INFO);
 
   // console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
-  
+
   renderMessage();
   renderPokemons(ALL_POKEMONS_INFO);
   renderSearch(ALL_POKEMONS_INFO);
