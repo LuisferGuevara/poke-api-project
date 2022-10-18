@@ -12,20 +12,10 @@ const getOnePokemon = async (url) => {
   try {
     const response = await fetch(url);
     const result = await response.json();
-    // const pokemon = {
-    //   name: result.name,
-    //   id: result.id,
-    //   type: [],
-    //   imagen: result.sprites.front_default,
-    // };
     return result;
   } catch (error) {
     console.log("Error obteniendo pokemon individual" + url + error);
   }
-  //  fetch(url)
-  //   .then((response) => response.json())
-  //   .then((response) => response)
-  //   .catch((error) => console.log("Error obteniendo pokemon individual", error));
 };
 
 const input$$ = document.createElement("input");
@@ -34,7 +24,6 @@ const container$$ = document.querySelector(".container");
 const box$$ = document.createElement("div");
 box$$.classList.add("box");
 const h1$$ = document.querySelector("h1");
-// console.log(h1$$);
 container$$.insertBefore(box$$, pokedex$$);
 
 const renderSearch = (pokemons) => {
@@ -53,9 +42,9 @@ const renderSearch = (pokemons) => {
 const renderMessage = () => {
   const messageNotFound$$ = document.createElement("h2");
   messageNotFound$$.textContent = "pokemons no encontrado";
-  // box$$.appendChild(messageNotFound$$)
 };
-renderMessage();
+
+let currentFilter = null;
 
 const toFind = (event) => {
   const inputValue = event.target.value.toLowerCase();
@@ -77,13 +66,12 @@ const toFind = (event) => {
   renderPokemons(FILTERED_POKEMONS);
 };
 
-let currentFilter = null;
 
 
 const renderToDoLink = () => {
   const divLink$$ = document.createElement("div");
   const a$$ = document.createElement("a");
-  a$$.setAttribute("href", "./todo.html");
+  a$$.setAttribute("href", "./toDoList/todo.html");
   a$$.textContent = "Crea tu próxima aventura";
   a$$.classList.add("link_to_do");
   divLink$$.classList.add("divLink");
@@ -94,7 +82,7 @@ const renderToDoLink = () => {
 const renderGameLink = () => {
   const gameDiv$$ = document.createElement("div");
   const a$$ = document.createElement("a");
-  a$$.setAttribute("href", "./molebuster.html");
+  a$$.setAttribute("href", "./molebuster/molebuster.html");
   a$$.textContent = "minigame";
   a$$.classList.add("game_link");
   gameDiv$$.classList.add("gameDiv");
@@ -135,16 +123,18 @@ const renderIcons = () => {
         // console.log('desactivedfilter',currentFilter, element);
         currentFilter = null
         image$$.classList.remove('type_active');
+        FILTERED_POKEMONS = ALL_POKEMONS_INFO;
       }else{
         // console.log('active', currentFilter, element);
         currentFilter = element
         image$$.classList.add('type_active');
+        FILTERED_POKEMONS = ALL_POKEMONS_INFO.filter((pokemon) => {
+          return pokemon.types[0].type.name === element;
+        });
       }
-      FILTERED_POKEMONS = ALL_POKEMONS_INFO.filter((pokemon) => {
-        return pokemon.types[0].type.name === element;
-      });
+      
       renderPokemons(FILTERED_POKEMONS);
-      // FILTERED_POKEMONS = ALL_POKEMONS_INFO;
+      
     });
 
     listItem.appendChild(image$$);
@@ -224,7 +214,8 @@ const init = async () => {
   // console.log('Todos la info de cada pokemon:', ALL_POKEMONS_INFO);
 
   // console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
-
+  
+  renderMessage();
   renderPokemons(ALL_POKEMONS_INFO);
   renderSearch(ALL_POKEMONS_INFO);
   renderIcons();
