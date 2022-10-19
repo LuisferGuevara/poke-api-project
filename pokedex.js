@@ -33,15 +33,11 @@ const renderSearch = (pokemons) => {
   divFinder$$.classList.add("divFinder");
   input$$.setAttribute("type", "text");
   input$$.setAttribute("placeholder", ". . .");
-  p$$.textContent = "Busca tu Pokémon";
+  p$$.textContent = "Find your Pokemon";
   divFinder$$.appendChild(p$$);
   divFinder$$.appendChild(input$$);
 
   box$$.appendChild(divFinder$$);
-};
-const renderMessage = () => {
-  const messageNotFound$$ = document.createElement("h2");
-  messageNotFound$$.textContent = "pokemons no encontrado";
 };
 
 let currentFilter = null;
@@ -70,7 +66,7 @@ const renderToDoLink = () => {
   const divLink$$ = document.createElement("div");
   const a$$ = document.createElement("a");
   a$$.setAttribute("href", "./toDoList/todo.html");
-  a$$.textContent = "Crea tu próxima aventura";
+  a$$.textContent = "GO TO TASKS";
   a$$.classList.add("link_to_do");
   divLink$$.classList.add("divLink");
   divLink$$.appendChild(a$$);
@@ -213,7 +209,6 @@ const init = async () => {
 
   // console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
 
-  renderMessage();
   renderPokemons(ALL_POKEMONS_INFO);
   renderSearch(ALL_POKEMONS_INFO);
   renderIcons();
