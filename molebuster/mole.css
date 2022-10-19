@@ -6,7 +6,7 @@ body {
   font-family: rubik;
   color: white;
   height: 100vh;
-  padding: 3vw;
+  padding-top: 10px;
 }
 .container{
   max-width: 1200px;

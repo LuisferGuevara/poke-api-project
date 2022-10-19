@@ -54,7 +54,6 @@ const toFind = (event) => {
 
     matchType = types.includes(inputValue);
 
-    console.log(pokemon.id, Number(inputValue));
     const matchId = pokemon.id.toString().indexOf(Number(inputValue)) > -1;
 
     return matchName || matchId || matchType;
@@ -84,7 +83,7 @@ const renderGameLink = () => {
 
   container$$.insertBefore(gameDiv$$, h1$$);
 };
-let audioDiv = document.createElement("div");
+
 const renderIcons = () => {
   const pokeIcons = [
     "bug",
@@ -139,6 +138,7 @@ const renderIcons = () => {
 
   box$$.appendChild(listForIcons$$);
 };
+let audioDiv = document.createElement("div");
 
 const renderPokemons = (pokemons) => {
   pokedex$$.innerHTML = "";
@@ -205,9 +205,6 @@ const init = async () => {
     ALL_POKEMONS_INFO.push(pokeInfo);
     FILTERED_POKEMONS.push(pokeInfo);
   }
-  // console.log('Todos la info de cada pokemon:', ALL_POKEMONS_INFO);
-
-  // console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
 
   renderPokemons(ALL_POKEMONS_INFO);
   renderSearch(ALL_POKEMONS_INFO);

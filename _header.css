@@ -84,6 +84,7 @@ input[type="text"] {
 .icon-list {
   list-style: none;
   padding: 0;
+  padding-right: 50px;
   width: 330px;
   max-width: 330px;
   display: flex;

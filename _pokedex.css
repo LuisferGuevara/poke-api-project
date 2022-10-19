@@ -9,6 +9,7 @@
   padding: 40px;
   max-width: 1600px;
   margin: 0 auto;
+  border-radius: 12px;
 }
 #loading {
   font-family: "PC Senior", sans-serif;

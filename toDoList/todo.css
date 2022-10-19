@@ -39,7 +39,8 @@ h1 {
   color: whitesmoke;
 }
 #box {
-  height: 80vh;
+  height: auto;
+border-radius: 12px;
   background-color: #2b292c;
   padding: 40px 80px;
   padding-top: 10px;
@@ -61,7 +62,7 @@ h1 {
   font-size: 1.2em;
   text-align: center;
   line-height: 1.4em;
-  padding-bottom: 30px;
+
 }
 #text{
   font-family: "PC Senior", sans-serif;
