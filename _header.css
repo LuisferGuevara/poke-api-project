@@ -4,7 +4,7 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   font-size: 60px;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
 }
 .container {
@@ -15,7 +15,7 @@ h1 {
 .game_link {
   text-decoration: none;
   color: whitesmoke;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   font-size: 12px;
   border: 1.5px solid #2b292c;
   border-radius: 12px;
@@ -48,7 +48,7 @@ h1 {
   font-size: 1em;
   line-height: 1.2em;
   text-align: center;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
 }
 .search_input {
   background-color: transparent;
@@ -95,7 +95,7 @@ input[type="text"] {
 }
 .icon-list::before {
   content: "  -ALL POKEMONS TYPES-";
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   font-size: 10px;
   text-align: center;
   margin: 0 15%;
@@ -131,7 +131,7 @@ input[type="text"] {
   border: 1.5px solid #2b292c;
   padding: 8px;
   border-radius: 12px;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   font-size: 12px;
   word-wrap: break-word;
   width: 60%;

@@ -40,7 +40,7 @@ const renderSearch = (pokemons) => {
   box$$.appendChild(divFinder$$);
 };
 
-let currentFilter = null;
+let currentFilter;
 
 const toFind = (event) => {
   const inputValue = event.target.value.toLowerCase();

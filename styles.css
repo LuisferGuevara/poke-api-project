@@ -1,7 +1,10 @@
 @import url("http://fonts.cdnfonts.com/css/common-pixel");
-@import url("http://fonts.cdnfonts.com/css/pc-senior");
 @import "./_header.css";
 @import "./_pokedex.css";
+@font-face {
+  font-family: "PC-Senior";
+  src: url(./assets/fonts/pcsenior.ttf) format("truetype");
+}
 
 body {
   background-color: #d53c47;

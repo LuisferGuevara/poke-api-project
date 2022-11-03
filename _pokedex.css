@@ -12,7 +12,7 @@
   border-radius: 12px;
 }
 #loading {
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   font-size: 35px;
 }
@@ -21,10 +21,9 @@
   flex-direction: row-reverse;
   align-items: center;
 }
-.divMessage img {
-}
+
 .not_found_message {
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior","sans-serif";
   -webkit-text-stroke: 0.3px #3663ac;
   font-size: 35px;
 }
