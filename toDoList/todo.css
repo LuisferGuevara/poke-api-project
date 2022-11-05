@@ -1,4 +1,8 @@
-@import url("http://fonts.cdnfonts.com/css/pc-senior");
+@font-face {
+  font-family: "PC-Senior";
+  src: url(../assets/fonts/pcsenior.ttf) format("truetype");
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 
 body {
@@ -18,7 +22,7 @@ h1 {
   text-align: center;
   font-size: 54px;
   line-height: 1.2em;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   width: 80vw;
   margin: 20px auto;
@@ -26,7 +30,7 @@ h1 {
 }
 .goback {
   text-decoration: none;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   color: white;
   border: 1.5px solid #2b292c;
@@ -65,7 +69,7 @@ border-radius: 12px;
 
 }
 #text{
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   line-height: 2em;
   font-size: 14px;
   text-align: center;

@@ -1,4 +1,8 @@
-@import url("http://fonts.cdnfonts.com/css/pc-senior");
+
+@font-face {
+  font-family: "PC-Senior";
+  src: url(../assets/fonts/pcsenior.ttf) format("truetype");
+}
 
 body {
   background-color: #d53c47;
@@ -15,7 +19,7 @@ body {
 .goback {
 
   text-decoration: none;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   color: white;
   border: 1.5px solid #2b292c;
@@ -31,7 +35,7 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   font-size: 50px;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   margin: 0 auto;
   padding-bottom: 20px;
@@ -56,7 +60,7 @@ h1 {
   color: #fff;
   margin-left: 15px;
   border: 2px solid black;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   font-size: 14px;
 }
 .gifdiv {
@@ -82,7 +86,7 @@ h1 {
 .game--container {
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 500px;
+  max-width: 100%;
   padding-top: 20px;
   margin-left: 80px;
   padding-bottom: 20px;
@@ -102,7 +106,7 @@ h1 {
   cursor: pointer;
 }
 .timer {
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   font-size: 22px;
 }
@@ -116,7 +120,7 @@ button {
   border-radius: 10px;
   margin-top: 20px;
   border: 2px solid black;
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   font-size: 22px;
   cursor: pointer;
@@ -133,7 +137,7 @@ button:hover {
   align-items: center;
 }
 .result h3 {
-  font-family: "PC Senior", sans-serif;
+  font-family: "PC-Senior", sans-serif;
   -webkit-text-stroke: 0.3px #3663ac;
   font-size: 22px;
 }
@@ -150,5 +154,16 @@ button:hover {
   }
   .result h3 {
     font-size: 16px;
+  }
+  .game--container{
+
+    margin-left: 0;
+    padding-top: 10%;
+    padding-left: 5%;
+
+  }
+  .hole, .dugtrio{
+    width: 120px;
+    height: 100px;
   }
 }
